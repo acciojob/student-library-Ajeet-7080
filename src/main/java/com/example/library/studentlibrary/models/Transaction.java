@@ -1,19 +1,23 @@
 package com.example.library.studentlibrary.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
+
+
+import lombok.Data;
+import lombok.Getter;
+
+import lombok.Setter;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
-@Builder
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@Data
 public class Transaction {
 
     @Id
@@ -42,5 +46,9 @@ public class Transaction {
 
     @CreationTimestamp
     private Date transactionDate;
+
+    public Transaction(){
+
+    }
 }
 
